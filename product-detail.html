@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数字经济景气指数（DESI）| 智能经济 · 数字经济研究</title>
+  <meta name="description" content="数字经济景气指数（DESI）演示页面：方法论说明、虚构测试数据下载、字段字典与示例计算脚本。">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3851'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ffce48' font-family='serif'%3E%E6%99%BA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 导航 ======================= -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">智能经济 · 数字经济研究</span>
+        <span class="brand__en">Digital Economy</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="打开菜单">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">首页</a>
+        <a href="products.html">数字产品</a>
+        <a href="cases.html">数字化案例</a>
+        <a href="insights.html">AI生态资讯</a>
+        <a href="team.html">团队成果</a>
+      </nav>
+      <form class="header__search" data-search-form>
+        <input type="search" placeholder="检索指数、数据、论文…" aria-label="站内检索">
+        <span class="search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </span>
+      </form>
+    </div>
+  </header>
+
+  <!-- ======================= 面包屑 ======================= -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span class="sep">/</span><a href="products.html">数字产品</a><span class="sep">/</span><span>数字经济景气指数</span>
+    </div>
+  </div>
+
+  <!-- ======================= 产品头部 ======================= -->
+  <section class="page-head">
+    <div class="container">
+      <span class="kicker">Digital Economy Prosperity Index · DESI</span>
+      <h1>数字经济景气指数</h1>
+      <div class="version-bar" style="max-width:660px;margin:0 auto;">
+        <span class="version-bar__meta">v3.2-demo · 虚构测试数据</span>
+        <span class="version-bar__meta">示例期 2016-01 — 2026-07</span>
+      </div>
+      <p class="lead" style="margin-top:24px;">
+        本页演示数字经济景气指数（DESI）的产品展示方式，包括方法论、数据文件、字段字典与计算脚本。
+        页面中的全部指数均为虚构测试数据，仅用于网站内容与 GitHub Pages 部署测试。
+      </p>
+      <div class="demo-notice" role="note">
+        <strong>数据声明：</strong>以下数值不代表任何真实研究结果，不得用于论文、决策或实际分析。
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 关键指标 ======================= -->
+  <section class="dark panel">
+    <div class="container">
+      <span class="kicker">Headline · 本期要点</span>
+      <div class="hero-stats">
+        <div class="stat-block reveal">
+          <div class="num">104.2</div>
+          <div class="label">景气指数（2026Q2）</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">112.5</div>
+          <div class="label">数字产业化分项</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">98.6</div>
+          <div class="label">产业数字化分项</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">31</div>
+          <div class="label">覆盖省级行政区</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 正文区（左侧目录导航） ======================= -->
+  <section class="panel">
+    <div class="container doc-layout">
+
+      <!-- 左侧吸顶目录导航 -->
+      <aside class="doc-sidebar">
+        <nav class="toc" data-spy>
+          <div class="toc__title">Contents · 目录</div>
+          <ol>
+            <li><a href="#method">方法论</a></li>
+            <li><a href="#indicators">指标体系</a></li>
+            <li><a href="#download">数据下载</a></li>
+            <li><a href="#citation">引用格式</a></li>
+            <li><a href="#versions">版本历史</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- 主内容 -->
+      <div class="doc-main">
+
+      <!-- 方法论 -->
+      <div class="doc-section" id="method">
+        <h2 style="display:flex;align-items:center;gap:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          一、方法论
+        </h2>
+        <p class="body-16 measure" style="color:#666;">
+          指数采用"自上而下 + 自下而上"的双向校准框架。总量层面以官方统计为基准，
+          分项层面以企业微观数据为先行指标，二者相互校验，避免单一数据源的系统性偏差。
+        </p>
+        <blockquote>
+          指数构建的基本立场：指标可以精简，方法必须透明。我们宁可牺牲一点"表面完备性"，
+          也要保证每一步计算都可被独立复核。
+        </blockquote>
+        <p class="body-16 measure" style="color:#666;">
+          标准化采用极差法，基期设定为 2016 年月均值 = 100。权重基于信息量贡献（方差分解）确定，
+          不依赖主观赋权。稳健性检验包含替换标准化方法、调整基期与删去单一产业三类情形，
+          结果差异均在 ±1.5 个百分点以内。
+        </p>
+        <div class="code-block">
+DESI_t  =  Σ w_i · I_i,t                  （总量指数）
+I_i,t   =  (x_i,t − x_min) / (x_max − x_min) × 100   （分项标准化）
+w_i     =  var(I_i) / Σ var(I_j)          （信息量权重）
+        </div>
+      </div>
+
+      <!-- 指标体系 -->
+      <div class="doc-section" id="indicators">
+        <h2 style="display:flex;align-items:center;gap:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+          二、指标体系
+        </h2>
+        <p class="body-16 measure" style="color:#666;">分项指数下设 12 个核心产业观测指标，每项指标均标注数据来源与更新频率。</p>
+        <div class="table-wrap" style="max-width:660px;">
+          <table class="min">
+            <thead>
+              <tr><th>分项</th><th>指标</th><th>来源</th><th>频率</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>数字产业化</td><td>软件业务收入</td><td>工信部</td><td>月度</td></tr>
+              <tr><td>数字产业化</td><td>电子信息制造业增加值</td><td>国家统计局</td><td>月度</td></tr>
+              <tr><td>数字产业化</td><td>电信业务总量</td><td>工信部</td><td>月度</td></tr>
+              <tr><td>产业数字化</td><td>实物商品网上零售额</td><td>国家统计局</td><td>月度</td></tr>
+              <tr><td>产业数字化</td><td>快递业务量</td><td>国家邮政局</td><td>月度</td></tr>
+              <tr><td>产业数字化</td><td>企业数字化采购指数</td><td>平台数据（脱敏）</td><td>月度</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 数据下载 -->
+      <div class="doc-section" id="download">
+        <h2 style="display:flex;align-items:center;gap:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          三、数据下载
+        </h2>
+        <p class="body-16 measure" style="color:#666;">
+          已补齐 CSV、Excel、Markdown 数据字典和 R 计算脚本。Excel 文件包含原始数据、摘要和字段字典，
+          R 脚本使用基础 R，可完成字段校验、复核网页展示值并输出汇总结果。
+        </p>
+        <div style="max-width:660px;">
+          <div class="download-item">
+            <div class="download-item__info">
+              <span class="download-item__name">desi_series_2016-2026.csv</span>
+              <span class="download-item__size">约 14 KB · 演示数据</span>
+            </div>
+            <a class="btn btn-sm btn-primary" href="assets/data/desi/desi_series_2016-2026.csv" download>下载</a>
+          </div>
+          <div class="download-item">
+            <div class="download-item__info">
+              <span class="download-item__name">desi_series_2016-2026.xlsx</span>
+              <span class="download-item__size">约 14 KB · 3 个工作表</span>
+            </div>
+            <a class="btn btn-sm btn-primary" href="assets/data/desi/desi_series_2016-2026.xlsx" download>下载</a>
+          </div>
+          <div class="download-item">
+            <div class="download-item__info">
+              <span class="download-item__name">desi_codebook.md</span>
+              <span class="download-item__size">字段定义与复核值</span>
+            </div>
+            <a class="btn btn-sm btn-ghost" href="assets/data/desi/desi_codebook.md" download>下载</a>
+          </div>
+          <div class="download-item">
+            <div class="download-item__info">
+              <span class="download-item__name">desi_calculation.R</span>
+              <span class="download-item__size">基础 R · 无第三方依赖</span>
+            </div>
+            <a class="btn btn-sm btn-ghost" href="assets/data/desi/desi_calculation.R" download>下载</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 引用格式 -->
+      <div class="doc-section" id="citation">
+        <h2 style="display:flex;align-items:center;gap:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          四、引用格式
+        </h2>
+        <p class="body-16 measure" style="color:#666;">
+          当前数据为虚构演示数据，不应作为真实数据进行学术引用。将来替换为正式研究数据时，
+          可参考下列格式，并将团队名称、真实网址、版本号和访问日期改为实际信息。
+        </p>
+        <div class="code-block">
+[演示格式] 研究团队（年份）. 数据集名称，版本号 [数据文件].
+检索自正式发布网址（访问日期）.
+        </div>
+        <p class="body-14 measure" style="color:#767676;margin-top:12px;">
+          另可按 BibTeX 格式引用：
+        </p>
+        <div class="code-block">
+@dataset{your_dataset_key,
+  title = {正式数据集名称},
+  version = {正式版本号},
+  publisher = {正式发布机构},
+  year = {发布年份},
+  url = {正式发布网址}
+}
+        </div>
+      </div>
+
+      <!-- 版本历史 -->
+      <div class="doc-section" id="versions">
+        <h2 style="display:flex;align-items:center;gap:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          五、版本历史
+        </h2>
+        <div style="max-width:660px;">
+          <div class="version-item">
+            <span class="version-item__ver">v3.2</span>
+            <span class="version-item__date">2026-07</span>
+            <span class="version-item__note">新增企业数字化采购分项；修正省际权重口径。</span>
+          </div>
+          <div class="version-item">
+            <span class="version-item__ver">v3.1</span>
+            <span class="version-item__date">2026-04</span>
+            <span class="version-item__note">数据字典重构；增加月度环比发布。</span>
+          </div>
+          <div class="version-item">
+            <span class="version-item__ver">v3.0</span>
+            <span class="version-item__date">2026-01</span>
+            <span class="version-item__note">基期调整至 2016=100；权重改用信息量法。</span>
+          </div>
+          <div class="version-item">
+            <span class="version-item__ver">v2.4</span>
+            <span class="version-item__date">2025-10</span>
+            <span class="version-item__note">历史序列回溯补齐至 2016 年。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <a class="btn btn-primary" href="products.html">← 返回产品总览</a>
+        <a class="btn btn-ghost" href="index.html">返回首页</a>
+      </div>
+
+      </div><!-- /doc-main -->
+    </div><!-- /doc-layout -->
+  </section>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">智能经济 · 数字经济研究</div>
+          <p class="footer__desc">Intelligent Economy · Digital Economy Research。一个开放的数字经济研究平台：指数、数据、案例与论文，全部可验证、可复现。</p>
+        </div>
+        <div class="footer__col">
+          <h4>产品</h4>
+          <a href="products.html">数字产品总览</a>
+          <a href="product-detail.html">指数方法论</a>
+          <a href="products.html">数据下载</a>
+          <a href="products.html">版本记录</a>
+        </div>
+        <div class="footer__col">
+          <h4>研究</h4>
+          <a href="team.html#papers">代表性论文</a>
+          <a href="cases.html">数字化案例</a>
+          <a href="insights.html">AI 生态资讯</a>
+          <a href="insights.html">每日简讯</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于</h4>
+          <a href="team.html#people">团队介绍</a>
+          <a href="team.html">加入我们</a>
+          <a href="index.html">开放声明</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 智能经济 · 数字经济研究团队</span>
+        <span class="mono">CC BY-NC 4.0 · ISSN 2996-2042</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

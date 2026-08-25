@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数字化案例 | 智能经济 · 数字经济研究</title>
+  <meta name="description" content="数字化案例库：来自制造业、零售、金融、医疗等行业的数字化转型案例，基于实地调研与企业授权数据，方法、指标与结果全部公开。">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3851'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ffce48' font-family='serif'%3E%E6%99%BA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ======================= 导航 ======================= -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">智能经济 · 数字经济研究</span>
+        <span class="brand__en">Digital Economy</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="打开菜单">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">首页</a>
+        <a href="products.html">数字产品</a>
+        <a href="cases.html">数字化案例</a>
+        <a href="insights.html">AI生态资讯</a>
+        <a href="team.html">团队成果</a>
+      </nav>
+      <form class="header__search" data-search-form>
+        <input type="search" placeholder="检索指数、数据、论文…" aria-label="站内检索">
+        <span class="search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </span>
+      </form>
+    </div>
+  </header>
+
+  <!-- ======================= 面包屑 ======================= -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span class="sep">/</span><span>数字化案例</span>
+    </div>
+  </div>
+
+  <!-- ======================= 页头 ======================= -->
+  <section class="page-head">
+    <div class="container">
+      <span class="kicker">Case Studies · 数字化案例</span>
+      <h1>数字化案例</h1>
+      <p class="lead">
+        案例来自团队长期的企业调研。每份案例都写明调研对象、数据口径与分析方法，
+        不粉饰效果，也不回避失败。以下是部分公开案例。
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= 行业筛选 ======================= -->
+  <section class="panel" style="padding-top:8px;">
+    <div class="container">
+      <div class="chip-row" data-filter-group="industry">
+        <button class="chip active" data-value="all">全部 <span class="count">12</span></button>
+        <button class="chip" data-value="manufacturing">制造业 <span class="count">4</span></button>
+        <button class="chip" data-value="retail">零售 <span class="count">3</span></button>
+        <button class="chip" data-value="finance">金融 <span class="count">2</span></button>
+        <button class="chip" data-value="medical">医疗 <span class="count">2</span></button>
+        <button class="chip" data-value="logistics">物流 <span class="count">1</span></button>
+      </div>
+
+      <!-- 案例列表 -->
+      <div style="margin-top:40px;">
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="manufacturing">
+          <div class="case-card__head">
+            <span class="case-card__title">某大型装备制造企业的数字化供应链改造</span>
+            <span class="case-card__industry">CASE-014 · 制造业</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              以数据中台统一 37 套业务系统，重构供应商协同流程。调研期为 18 个月，
+              效果指标取改造前后各 12 个月的均值对比。方法为倾向得分匹配 + 双重差分。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">57%</div><div class="label">库存周转效率</div></div>
+              <div class="metric"><div class="num">−12 天</div><div class="label">供应链响应周期</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="retail">
+          <div class="case-card__head">
+            <span class="case-card__title">区域连锁零售企业的智能补货系统</span>
+            <span class="case-card__industry">CASE-021 · 零售</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              基于销售预测模型重构门店补货决策，试点 42 家门店，对照 40 家。
+              预测模型使用梯度提升树，滚动回测误差 MAPE 8.2%。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">2.1%</div><div class="label">缺货率（原 6.8%）</div></div>
+              <div class="metric"><div class="num">−18%</div><div class="label">生鲜损耗</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="finance">
+          <div class="case-card__head">
+            <span class="case-card__title">城商行零售信贷的智能风控改造</span>
+            <span class="case-card__industry">CASE-009 · 金融</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              引入可解释机器学习模型（XGBoost + SHAP）重构贷前审批流程，
+              在保持通过率基本不变的前提下降低不良率。样本为 2 年完整授信记录。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">−31%</div><div class="label">首逾不良率</div></div>
+              <div class="metric"><div class="num">+12%</div><div class="label">审批效率</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="medical">
+          <div class="case-card__head">
+            <span class="case-card__title">地市级医院影像科的 AI 辅助诊断落地</span>
+            <span class="case-card__industry">CASE-030 · 医疗</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              评估 AI 辅助肺结节筛查系统在真实工作流中的表现。设计为双盲对照，
+              覆盖 8,400 例胸部 CT，由 6 名放射科医生独立阅片。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">+9.4%</div><div class="label">敏感度（相对基准）</div></div>
+              <div class="metric"><div class="num">−22%</div><div class="label">平均阅片时间</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="medical">
+          <div class="case-card__head">
+            <span class="case-card__title">县域医共体的数字健康档案共享</span>
+            <span class="case-card__industry">CASE-035 · 医疗</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              追踪 3 个县域医共体的电子健康档案共享项目，评估双向转诊效率与重复检查率变化。
+              数据来自县域医疗信息平台脱敏日志。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">−41%</div><div class="label">重复检查率</div></div>
+              <div class="metric"><div class="num">+63%</div><div class="label">双向转诊及时性</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card reveal" data-filter-target="industry" data-filter="logistics">
+          <div class="case-card__head">
+            <span class="case-card__title">区域零担物流企业的运力调度优化</span>
+            <span class="case-card__industry">CASE-027 · 物流</span>
+          </div>
+          <div class="case-card__body">
+            <p class="case-card__desc">
+              构建运力需求预测与车辆路径优化模型，覆盖 11 个分拨中心、日均 6,000 单。
+              优化目标为综合成本，约束条件含时效与装载率。
+            </p>
+            <div class="case-card__metrics">
+              <div class="metric"><div class="num">+9%</div><div class="label">车辆装载率</div></div>
+              <div class="metric"><div class="num">−14%</div><div class="label">单票运输成本</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pager">
+        <span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 方法声明 ======================= -->
+  <section class="panel" style="background:var(--gray-bg);">
+    <div class="container">
+      <span class="kicker">Methodology · 案例方法声明</span>
+      <h2>我们如何做案例</h2>
+      <blockquote style="margin-top:16px;">
+        案例不是广告。每份公开案例均附调研周期、样本口径、分析方法与局限性说明；
+        涉及企业敏感数据的一律脱敏，效果指标必须有对照或前后可比基准。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">智能经济 · 数字经济研究</div>
+          <p class="footer__desc">Intelligent Economy · Digital Economy Research。一个开放的数字经济研究平台：指数、数据、案例与论文，全部可验证、可复现。</p>
+        </div>
+        <div class="footer__col">
+          <h4>产品</h4>
+          <a href="products.html">数字产品总览</a>
+          <a href="product-detail.html">指数方法论</a>
+          <a href="products.html">数据下载</a>
+          <a href="products.html">版本记录</a>
+        </div>
+        <div class="footer__col">
+          <h4>研究</h4>
+          <a href="team.html#papers">代表性论文</a>
+          <a href="cases.html">数字化案例</a>
+          <a href="insights.html">AI 生态资讯</a>
+          <a href="insights.html">每日简讯</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于</h4>
+          <a href="team.html#people">团队介绍</a>
+          <a href="team.html">加入我们</a>
+          <a href="index.html">开放声明</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 智能经济 · 数字经济研究团队</span>
+        <span class="mono">CC BY-NC 4.0 · ISSN 2996-2042</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

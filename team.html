@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>团队成果 | 智能经济 · 数字经济研究</title>
+  <meta name="description" content="团队成果：团队介绍（教师队伍、博士研究生、硕士研究生）与代表性论文。研究领域覆盖智能经济、数字经济测度、AI 经济学与产业数字化。">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3851'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ffce48' font-family='serif'%3E%E6%99%BA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* 成果统计板块：5 列数字卡片 */
+    .hero-stats--5 { grid-template-columns: repeat(5, 1fr); }
+    @media (max-width: 980px) { .hero-stats--5 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .hero-stats--5 { grid-template-columns: repeat(2, 1fr); } }
+
+    /* 成果统计板块：图表容器 */
+    .chart-wrap {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xs);
+      padding: 24px;
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chart-wrap img { max-width: 100%; height: auto; }
+    .chart-caption {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink-3);
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= 导航 ======================= -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">智能经济 · 数字经济研究</span>
+        <span class="brand__en">Digital Economy</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="打开菜单">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">首页</a>
+        <a href="products.html">数字产品</a>
+        <a href="cases.html">数字化案例</a>
+        <a href="insights.html">AI生态资讯</a>
+        <a href="team.html">团队成果</a>
+      </nav>
+      <form class="header__search" data-search-form>
+        <input type="search" placeholder="检索指数、数据、论文…" aria-label="站内检索">
+        <span class="search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </span>
+      </form>
+    </div>
+  </header>
+
+  <!-- ======================= 面包屑 ======================= -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span class="sep">/</span><span>团队成果</span>
+    </div>
+  </div>
+
+  <!-- ======================= 页头 ======================= -->
+  <section class="page-head">
+    <div class="container">
+      <span class="kicker">Our Work · 团队成果</span>
+      <h1>团队成果</h1>
+      <p class="lead">
+        团队长期从事智能经济与数字经济研究，成员来自经济学、统计学、计算机科学与管理学。
+        这里介绍我们的成员与代表性论文。
+      </p>
+      <div class="btn-group" style="margin-top:16px;justify-content:center;">
+        <a class="btn btn-ghost btn-sm" href="#people">团队介绍 ↓</a>
+        <a class="btn btn-ghost btn-sm" href="#stats">成果统计 ↓</a>
+        <a class="btn btn-ghost btn-sm" href="#papers">代表性论文 ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 团队介绍 ======================= -->
+  <section class="panel center-head" id="people" style="padding-top:24px;scroll-margin-top:88px;">
+    <div class="container">
+      <span class="kicker" style="text-align:center;">Our People · 团队介绍</span>
+      <h2>团队介绍</h2>
+
+      <!-- 教师队伍 -->
+      <h3 style="margin-top:32px;margin-bottom:8px;">教师队伍</h3>
+      <div class="people">
+        <div class="person reveal">
+          <div class="person__avatar">陈</div>
+          <div class="person__name">陈教授</div>
+          <div class="person__role">Professor · 数字经济测度</div>
+          <p class="person__desc">负责数字经济景气指数体系总体设计。长期从事宏观经济统计与数字经济核算研究。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">林</div>
+          <div class="person__name">林副教授</div>
+          <div class="person__role">Associate Professor · AI 经济学</div>
+          <p class="person__desc">研究人工智能对劳动力市场与生产率的影响，主导 AI 生态活力指数构建。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">周</div>
+          <div class="person__name">周副教授</div>
+          <div class="person__role">Associate Professor · 产业数字化</div>
+          <p class="person__desc">关注制造业与零售业数字化转型的微观证据，负责产业数字化水平指数。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">吴</div>
+          <div class="person__name">吴讲师</div>
+          <div class="person__role">Lecturer · 数据要素市场</div>
+          <p class="person__desc">研究数据要素市场化配置的制度与价格机制，牵头数据要素市场指数。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">郑</div>
+          <div class="person__name">郑讲师</div>
+          <div class="person__role">Lecturer · 计算社会科学</div>
+          <p class="person__desc">负责文本挖掘与自然语言处理方法的工程实现，支撑团队的数据生产管线。</p>
+        </div>
+      </div>
+
+      <!-- 博士研究生 -->
+      <h3 style="margin-top:48px;margin-bottom:8px;">博士研究生</h3>
+      <div class="people">
+        <div class="person reveal">
+          <div class="person__avatar">许</div>
+          <div class="person__name">许博士</div>
+          <div class="person__role">PhD · 数字经济核算</div>
+          <p class="person__desc">构建省际数字经济卫星账户，博士论文聚焦数字化投资核算。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">何</div>
+          <div class="person__name">何博士</div>
+          <div class="person__role">PhD · AI 与劳动力市场</div>
+          <p class="person__desc">利用招聘大数据研究 AI 技能溢价及其地区差异。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">罗</div>
+          <div class="person__name">罗博士</div>
+          <div class="person__role">PhD · 平台经济</div>
+          <p class="person__desc">研究平台算法与市场竞争，参与案例库的金融科技部分。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">高</div>
+          <div class="person__name">高博士</div>
+          <div class="person__role">PhD · 数据资产估值</div>
+          <p class="person__desc">探索数据资产入表与估值方法，与企业合作开展试点。</p>
+        </div>
+      </div>
+
+      <!-- 硕士研究生 -->
+      <h3 style="margin-top:48px;margin-bottom:8px;">硕士研究生</h3>
+      <div class="people">
+        <div class="person reveal">
+          <div class="person__avatar">孙</div>
+          <div class="person__name">孙同学</div>
+          <div class="person__role">Master · 产业数字化</div>
+          <p class="person__desc">负责制造业案例调研与指标体系维护。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">冯</div>
+          <div class="person__name">冯同学</div>
+          <div class="person__role">Master · 数据要素</div>
+          <p class="person__desc">整理数据交易所公开信息，维护数据要素市场指数。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">方</div>
+          <div class="person__name">方同学</div>
+          <div class="person__role">Master · AI 应用</div>
+          <p class="person__desc">负责大模型评测与 AI 生态监测数据管线。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">唐</div>
+          <div class="person__name">唐同学</div>
+          <div class="person__role">Master · 数字经济统计</div>
+          <p class="person__desc">负责省级数据清洗与指数计算脚本维护。</p>
+        </div>
+        <div class="person reveal">
+          <div class="person__avatar">于</div>
+          <div class="person__name">于同学</div>
+          <div class="person__role">Master · 文本挖掘</div>
+          <p class="person__desc">负责政策文本与公告的结构化提取。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 成果统计（浅灰 #f4f4f4 背景，与团队介绍区分） ======================= -->
+  <section class="panel center-head" id="stats" style="background:#f4f4f4;scroll-margin-top:88px;">
+    <div class="container">
+      <span class="kicker" style="text-align:center;">Statistics · 成果统计</span>
+      <h2>成果统计</h2>
+      <p class="lead measure" style="margin:0 auto 8px;">
+        课题组 2021—2025 年成果五年总计：论文、专利、获奖、科研经费与人才培养规模持续扩大，
+        以下为五年累计数据概览（虚构测试数据）。
+      </p>
+
+      <!-- 五年总计数字卡片 -->
+      <div class="hero-stats hero-stats--5" style="margin-top:32px;text-align:left;">
+        <div class="stat-block reveal">
+          <div class="num">75</div>
+          <div class="label">发表论文（篇）</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">20</div>
+          <div class="label">授权专利（项）</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">12</div>
+          <div class="label">获奖（项）</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">1220</div>
+          <div class="label">科研经费（万元）</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="num">30</div>
+          <div class="label">毕业研究生（人）</div>
+        </div>
+      </div>
+
+      <!-- 论文年度趋势柱状图 -->
+      <div class="chart-wrap reveal" style="margin-top:40px;">
+        <img src="assets/data/team/team-papers-bar.svg" alt="课题组各年度发表论文数（2021—2025）"
+             onerror="this.onerror=null;this.src='assets/data/team/team-papers-bar.png'">
+        <div class="chart-caption">课题组各年度发表论文数（2021—2025）· 数据来源：课题组年度成果统计（虚构测试数据）</div>
+        <div class="btn-group" style="justify-content:center;margin-top:16px;">
+          <a class="btn btn-sm btn-ghost" href="assets/data/team/team-papers-bar.png" download>下载 PNG ↓</a>
+          <a class="btn btn-sm btn-ghost" href="assets/data/team/team-papers-bar.svg" download>下载 SVG ↓</a>
+        </div>
+      </div>
+
+      <!-- 跳转详情页 -->
+      <div class="btn-group" style="justify-content:center;margin-top:32px;">
+        <a class="btn btn-primary" href="team-stats.html">查看详情</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 代表性论文（参考图版式） ======================= -->
+  <section class="panel center-head" id="papers" style="background:#ffffff;scroll-margin-top:88px;">
+    <div class="container">
+      <span class="kicker" style="text-align:center;">Publications · 代表性论文</span>
+      <h2>代表性论文</h2>
+      <p class="lead measure" style="margin:0 auto 8px;">以下论文代表团队在数字经济测度、AI 经济学与产业数字化方向的主要工作。每篇论文均尽可能公开数据、代码与附录材料。</p>
+
+      <div class="paper reveal">
+        <div class="paper__index">01</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">中国数字经济景气指数：构建、分解与应用</a>
+          <div class="paper__meta">陈 · 林 · 2026 · 《经济研究》· DOI 10.1016/ie.2026.01.002</div>
+          <p class="paper__abstract">
+            提出"总量—分项—省际"三层数字经济景气指数框架，利用 2016—2025 年月度数据
+            测度数字经济运行，并识别数字产业化与产业数字化的周期差异。指数已作为开放数据发布。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">代码</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="经济研究封面">
+            <rect width="150" height="200" fill="#1E3851"/>
+            <rect x="10" y="10" width="130" height="180" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+            <text x="75" y="52" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#ffffff">经济研究</text>
+            <line x1="40" y1="62" x2="110" y2="62" stroke="#ffce48" stroke-width="2"/>
+            <text x="75" y="82" text-anchor="middle" font-family="sans-serif" font-size="8" letter-spacing="2" fill="rgba(255,255,255,.6)">ECONOMIC RESEARCH JOURNAL</text>
+            <rect x="45" y="100" width="60" height="60" fill="none" stroke="#ffce48" stroke-width="1.5"/>
+            <path d="M50 145 l16-20 10 12 12-16 12 24" fill="none" stroke="#ffce48" stroke-width="1.5"/>
+            <text x="75" y="180" text-anchor="middle" font-family="serif" font-size="12" font-weight="700" fill="#ffffff">2026 · Vol.1</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">02</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">人工智能渗透的劳动力市场效应：来自招聘大数据的证据</a>
+          <div class="paper__meta">林 · 何 · 2025 · 《管理世界》· DOI 10.1016/ms.2025.07.018</div>
+          <p class="paper__abstract">
+            基于 1,200 万条招聘文本构建企业级 AI 渗透指标，估计 AI 采用对岗位结构、
+            技能溢价与地区劳动力流动的影响。结果提示 AI 的红利与成本存在显著的空间错配。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">代码</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="管理世界封面">
+            <rect width="150" height="200" fill="#ffffff"/>
+            <rect x="0" y="0" width="150" height="34" fill="#1E3851"/>
+            <text x="75" y="24" text-anchor="middle" font-family="serif" font-size="17" font-weight="700" fill="#ffffff">管理世界</text>
+            <text x="75" y="46" text-anchor="middle" font-family="sans-serif" font-size="7" letter-spacing="2" fill="#767676">MANAGEMENT WORLD</text>
+            <circle cx="75" cy="95" r="34" fill="none" stroke="#1E3851" stroke-width="2"/>
+            <path d="M50 100 h50 M75 75 v50" stroke="#ffce48" stroke-width="2.5"/>
+            <circle cx="75" cy="95" r="8" fill="#1E3851"/>
+            <text x="75" y="158" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#1E3851">2025 · No.7</text>
+            <text x="75" y="176" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#767676">AI 与劳动力市场专刊</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">03</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">产业数字化的微观证据：基于企业面板数据的因果识别</a>
+          <div class="paper__meta">周 · 孙 · 2025 · 《中国工业经济》· DOI 10.1016/cie.2025.03.011</div>
+          <p class="paper__abstract">
+            利用企业数字化改造的准自然实验，以工具变量法识别数字化转型对生产率的影响。
+            发现数字化收益呈现明显的"先投入、后回报"模式，且与组织变革的配套程度高度相关。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">代码</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="中国工业经济封面">
+            <rect width="150" height="200" fill="#F5F5F5"/>
+            <rect x="10" y="10" width="130" height="180" fill="#ffffff" stroke="#1E3851" stroke-width="1.5"/>
+            <text x="75" y="50" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#1E3851">中国工业经济</text>
+            <text x="75" y="68" text-anchor="middle" font-family="sans-serif" font-size="7" letter-spacing="2" fill="#767676">CHINA INDUSTRIAL ECONOMICS</text>
+            <rect x="42" y="92" width="66" height="46" fill="#1E3851"/>
+            <path d="M52 126 l12-14 8 10 12-16 12 20" fill="none" stroke="#ffce48" stroke-width="2"/>
+            <text x="75" y="168" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#1E3851">2025 · No.3</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">04</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">数据要素市场的价格形成机制：理论与证据</a>
+          <div class="paper__meta">吴 · 冯 · 2024 · 《经济学（季刊）》· DOI 10.1016/qje.2024.11.005</div>
+          <p class="paper__abstract">
+            构建数据要素交易的博弈模型，结合全国主要数据交易所成交记录，
+            讨论数据定价中的边际成本趋零与价值不确定性带来的定价困境。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="经济学季刊封面">
+            <rect width="150" height="200" fill="#2a4a6b"/>
+            <rect x="8" y="8" width="134" height="184" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+            <text x="75" y="46" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#ffffff">经济学（季刊）</text>
+            <line x1="35" y1="58" x2="115" y2="58" stroke="#ffce48" stroke-width="2"/>
+            <text x="75" y="76" text-anchor="middle" font-family="sans-serif" font-size="7" letter-spacing="2" fill="rgba(255,255,255,.6)">CHINA ECONOMIC QUARTERLY</text>
+            <circle cx="75" cy="120" r="26" fill="none" stroke="#ffce48" stroke-width="1.5"/>
+            <circle cx="75" cy="120" r="12" fill="#ffce48" opacity=".9"/>
+            <text x="75" y="170" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#ffffff">2024 · No.11</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">05</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">数字化转型的组织边界：企业内部如何分配数字化能力</a>
+          <div class="paper__meta">周 · 郑 · 2024 · 《南开管理评论》· DOI 10.1016/nk.2024.05.009</div>
+          <p class="paper__abstract">
+            通过对 40 家企业的深度访谈与档案数据，归纳数字化转型中数字化能力
+            在业务部门与 IT 部门之间的配置模式，提出三种典型组织形态。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="南开管理评论封面">
+            <rect width="150" height="200" fill="#ffffff"/>
+            <rect x="0" y="0" width="150" height="150" fill="#1E3851"/>
+            <text x="75" y="34" text-anchor="middle" font-family="serif" font-size="17" font-weight="700" fill="#ffffff">南开管理评论</text>
+            <text x="75" y="52" text-anchor="middle" font-family="sans-serif" font-size="7" letter-spacing="2" fill="rgba(255,255,255,.6)">NANKAI BUSINESS REVIEW</text>
+            <rect x="30" y="72" width="90" height="56" fill="none" stroke="#ffce48" stroke-width="1.5"/>
+            <rect x="30" y="72" width="45" height="56" fill="#ffce48" opacity=".85"/>
+            <rect x="38" y="82" width="28" height="8" fill="#1E3851"/>
+            <rect x="38" y="96" width="28" height="6" fill="#1E3851" opacity=".6"/>
+            <rect x="38" y="108" width="28" height="6" fill="#1E3851" opacity=".4"/>
+            <text x="75" y="180" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#1E3851">2024 · No.5</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">06</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">大模型时代的技能需求变迁：证据与测量</a>
+          <div class="paper__meta">林 · 方 · 2024 · 《数量经济技术经济研究》· DOI 10.1016/qte.2024.09.006</div>
+          <p class="paper__abstract">
+            提出一种从招聘文本中识别"人机协作技能"的测量方法，并估计 2023—2024 年
+            技能需求结构的迁移幅度，讨论对教育供给的启示。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">代码</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="数量经济技术经济研究封面">
+            <rect width="150" height="200" fill="#F5F5F5"/>
+            <rect x="10" y="10" width="130" height="180" fill="#1E3851"/>
+            <text x="75" y="42" text-anchor="middle" font-family="serif" font-size="15" font-weight="700" fill="#ffffff">数量经济技术经济研究</text>
+            <line x1="30" y1="54" x2="120" y2="54" stroke="#ffce48" stroke-width="2"/>
+            <text x="75" y="74" text-anchor="middle" font-family="sans-serif" font-size="6.5" letter-spacing="1.5" fill="rgba(255,255,255,.6)">JOURNAL OF QUANTITATIVE &amp; TECHNOLOGICAL ECONOMICS</text>
+            <g fill="none" stroke="#ffce48" stroke-width="2" stroke-linecap="round">
+              <path d="M35 128 l15-18 12 12 16-22 12 14 25-30"/>
+              <circle cx="115" cy="84" r="3" fill="#ffce48" stroke="none"/>
+            </g>
+            <text x="75" y="172" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#ffffff">2024 · No.9</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="paper reveal">
+        <div class="paper__index">07</div>
+        <div class="paper__body">
+          <a class="paper__title" href="#">中国数字经济核算：卫星账户方法与试算结果</a>
+          <div class="paper__meta">陈 · 许 · 2023 · 《统计研究》· DOI 10.1016/tj.2023.04.012</div>
+          <p class="paper__abstract">
+            构建中国数字经济卫星账户（DESA），将数字经济生产活动从国民经济核算中
+            剥离识别，给出 2018—2022 年的试算结果与统计口径建议。
+          </p>
+          <div class="paper__links">
+            <a href="#">PDF</a><a href="#">数据</a><a href="#">引用 BibTeX</a>
+          </div>
+        </div>
+        <div class="paper__cover">
+          <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="统计研究封面">
+            <rect width="150" height="200" fill="#2a4a6b"/>
+            <text x="75" y="44" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#ffffff">统计研究</text>
+            <text x="75" y="62" text-anchor="middle" font-family="sans-serif" font-size="7" letter-spacing="2" fill="rgba(255,255,255,.6)">STATISTICAL RESEARCH</text>
+            <line x1="30" y1="76" x2="120" y2="76" stroke="#ffce48" stroke-width="2"/>
+            <g stroke="#ffce48" stroke-width="2" fill="none">
+              <rect x="40" y="98" width="14" height="46" rx="1"/>
+              <rect x="62" y="86" width="14" height="58" rx="1"/>
+              <rect x="84" y="106" width="14" height="38" rx="1"/>
+              <rect x="106" y="78" width="14" height="66" rx="1"/>
+            </g>
+            <text x="75" y="176" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#ffffff">2023 · No.4</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="pager">
+        <span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页 →</a>
+      </div>
+
+      <!-- 开放材料声明 -->
+      <blockquote style="margin-top:48px;">
+        论文是研究的中途站，不是终点。我们为每篇论文维护配套的数据与代码仓库，
+        审稿期间承诺的复现包，发表后一律公开。
+      </blockquote>
+      <div class="btn-group">
+        <a class="btn btn-ghost" href="#">访问复现仓库</a>
+        <a class="btn btn-text" href="products.html">相关开放数据 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 加入我们 ======================= -->
+  <section class="dark panel">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;">
+      <div>
+        <span class="kicker">Join Us · 加入我们</span>
+        <h2 style="margin-top:8px;">我们在招博士生与硕士生</h2>
+        <p class="lead measure" style="margin-top:12px;">
+          研究方向包括数字经济测度、AI 经济学、数据要素市场与产业数字化转型。
+          欢迎有经济学或统计基础、对代码和数据敏感的同学联系我们。
+        </p>
+      </div>
+      <div class="btn-group" style="margin-top:0;">
+        <a class="btn btn-primary" href="#">查看招生信息</a>
+        <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff;" href="#">联系邮箱</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 页脚 ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">智能经济 · 数字经济研究</div>
+          <p class="footer__desc">Intelligent Economy · Digital Economy Research。一个开放的数字经济研究平台：指数、数据、案例与论文，全部可验证、可复现。</p>
+        </div>
+        <div class="footer__col">
+          <h4>产品</h4>
+          <a href="products.html">数字产品总览</a>
+          <a href="product-detail.html">指数方法论</a>
+          <a href="products.html">数据下载</a>
+          <a href="products.html">版本记录</a>
+        </div>
+        <div class="footer__col">
+          <h4>研究</h4>
+          <a href="team.html#papers">代表性论文</a>
+          <a href="cases.html">数字化案例</a>
+          <a href="insights.html">AI 生态资讯</a>
+          <a href="insights.html">每日简讯</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于</h4>
+          <a href="team.html#people">团队介绍</a>
+          <a href="team.html">加入我们</a>
+          <a href="index.html">开放声明</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 智能经济 · 数字经济研究团队</span>
+        <span class="mono">CC BY-NC 4.0 · ISSN 2996-2042</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

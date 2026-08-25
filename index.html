@@ -1,298 +1,1463 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>智能经济 · 数字经济研究 | Intelligent Economy · Digital Economy Research</title>
-  <meta name="description" content="智能经济与数字经济研究平台：发布数字经济指数、AI 生态监测、产业数字化案例与开放数据，共享可验证的研究方法与数据。">
-  <meta name="keywords" content="智能经济,数字经济,数字经济指数,AI生态,产业数字化,开放数据,数字经济研究">
-  <meta name="robots" content="index,follow">
-  <meta property="og:title" content="智能经济 · 数字经济研究">
-  <meta property="og:description" content="可信、清晰、开放、高效的数字经济研究平台。指数、数据、案例与论文全部开放。">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3851'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ffce48' font-family='serif'%3E%E6%99%BA%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>智能经济 · 数字经济研究 | Intelligent Economy · Digital Economy Research</title>
+
+    <!-- 合并自第二份代码：SEO / favicon / fonts -->
+    <meta name="description" content="智能经济・数字经济研究：公开数字经济指数、产业数字化案例与 AI 生态观察，提供可复现的开放数据与方法说明。">
+    <meta name="keywords" content="智能经济,数字经济,数字经济指数,AI生态,产业数字化,开放数据,数字经济研究">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="智能经济・数字经济研究">
+    <meta property="og:description" content="公开数字经济指数、产业数字化案例与 AI 生态观察，提供可复现的开放数据与方法说明。">
+    <meta property="og:type" content="website">
+    <!-- 内嵌 data-uri favicon（来自第二份代码） -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3851'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23ffce48' font-family='serif'%3E%E6%99%BA%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts（IBM Plex Mono）来自第二份代码 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- 可选外部样式（如果你有 assets/css/style.css 并希望使用它） -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ==============================
+           全局与可访问性增强样式（原始第一份代码为主）
+        ============================== */
+
+        :root {
+            --navy: #1d3d59;
+            --navy-dark: #142f47;
+            --yellow: #ffca45;
+            --white: #ffffff;
+            --background: #f7f8fa;
+            --text: #292d32;
+            --gray: #6f747a;
+            --gray-light: #e7eaee;
+            --max-width: 1220px;
+            /* 新增：首选等宽字体 */
+            --font-mono: 'IBM Plex Mono', "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "PingFang SC",
+                "Hiragino Sans GB",
+                "Microsoft YaHei",
+                Arial,
+                sans-serif;
+            line-height: 1.7;
+        }
+
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            background: var(--yellow);
+            color: var(--navy-dark);
+            padding: 8px 12px;
+            border-radius: 4px;
+            z-index: 2000;
+            transform: translateY(-120%);
+            transition: transform 0.2s ease;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 3px solid rgba(29,61,89,0.12);
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 96px 0;
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-heading {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            margin-bottom: 12px;
+            color: var(--gray);
+            font-family: var(--font-mono);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+            color: var(--navy);
+            font-family:
+                Georgia,
+                "Songti SC",
+                "SimSun",
+                serif;
+            font-size: clamp(30px, 4vw, 48px);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .section-description {
+            max-width: 760px;
+            color: var(--gray);
+            font-size: 18px;
+        }
+
+        /* ==============================
+           顶部导航栏
+        ============================== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navy);
+            color: var(--white);
+            box-shadow: 0 4px 18px rgba(10, 31, 48, 0.12);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            min-height: 104px;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .brand {
+            display: flex;
+            min-width: 350px;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .brand-cn {
+            max-width: 235px;
+            font-family:
+                Georgia,
+                "Songti SC",
+                "SimSun",
+                serif;
+            font-size: 29px;
+            letter-spacing: 0.04em;
+            line-height: 1.45;
+        }
+
+        .brand-en {
+            color: #aeb9c4;
+            font-family: var(--font-mono);
+            font-size: 17px;
+            letter-spacing: 0.15em;
+            line-height: 1.8;
+        }
+
+        .primary-nav {
+            display: flex;
+            align-self: stretch;
+            align-items: stretch;
+        }
+
+        .primary-nav a {
+            display: flex;
+            min-width: 78px;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            color: #d0d7df;
+            font-size: 17px;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .primary-nav a:hover,
+        .primary-nav a.active {
+            background: var(--yellow);
+            color: var(--navy-dark);
+        }
+
+        .site-search {
+            display: flex;
+            min-width: 260px;
+            margin-left: auto;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            background: var(--white);
+        }
+
+        .site-search input {
+            width: 100%;
+            min-width: 0;
+            padding: 13px 8px 13px 22px;
+            border: 0;
+            outline: none;
+            color: var(--text);
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .site-search input::placeholder {
+            color: #9ca5ae;
+        }
+
+        .search-button {
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            background: transparent;
+            color: var(--navy);
+        }
+
+        .menu-button {
+            display: none;
+            width: 46px;
+            height: 46px;
+            margin-left: auto;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--white);
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+        }
+
+        .menu-icon {
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            position: absolute;
+            left: 0;
+            content: "";
+        }
+
+        .menu-icon::before {
+            top: -7px;
+        }
+
+        .menu-icon::after {
+            top: 7px;
+        }
+
+        .search-message {
+            display: none;
+            padding: 10px 24px;
+            background: var(--yellow);
+            color: var(--navy-dark);
+            text-align: center;
+        }
+
+        .search-message.show {
+            display: block;
+        }
+
+        /* focus 样式 (prefer :focus-visible) */
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: 3px solid rgba(29, 61, 89, 0.12);
+            outline-offset: 2px;
+        }
+
+        /* ==============================
+           首页主视觉
+        ============================== */
+
+        .hero {
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(29, 61, 89, 0.06),
+                    transparent 32%
+                ),
+                var(--white);
+        }
+
+        .hero-content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 92px 0;
+            text-align: center;
+        }
+
+        .hero-label {
+            margin-bottom: 35px;
+            color: #757575;
+            font-family: var(--font-mono);
+            font-size: 18px;
+            letter-spacing: 0.18em;
+        }
+
+        .hero-title {
+            margin-bottom: 28px;
+            color: #2e3032;
+            font-family:
+                Georgia,
+                "Songti SC",
+                "SimSun",
+                serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            line-height: 1.25;
+        }
+
+        .hero-description {
+            max-width: 900px;
+            margin: 0 auto 56px;
+            color: #666b70;
+            font-size: clamp(18px, 2.2vw, 24px);
+            line-height: 2;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            min-width: 190px;
+            min-height: 58px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            border: 2px solid var(--navy);
+            border-radius: 999px;
+            font-size: 18px;
+            font-weight: 600;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--navy);
+        }
+
+        .button-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* ==============================
+           数据统计 & 卡片等（略过重复样式）
+        ============================== */
+
+        .statistics {
+            padding: 75px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .statistics-label {
+            margin-bottom: 24px;
+            color: #aeb9c4;
+            font-family: var(--font-mono);
+            letter-spacing: 0.18em;
+        }
+
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat-item {
+            min-height: 145px;
+            padding: 14px 30px;
+            border-left: 3px solid var(--yellow);
+        }
+
+        .stat-value {
+            margin-bottom: 20px;
+            font-family: var(--font-mono);
+            font-size: clamp(38px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-name {
+            color: #bdc6cf;
+            font-size: 17px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .content-card {
+            position: relative;
+            min-height: 310px;
+            overflow: hidden;
+            padding: 34px;
+            border: 1px solid var(--gray-light);
+            background: var(--white);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .content-card::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--yellow);
+            content: "";
+        }
+
+        .content-card:hover {
+            transform: translateY(-6px);
+            border-color: transparent;
+            box-shadow: 0 18px 45px rgba(19, 48, 71, 0.13);
+        }
+
+        /* ==============================
+           新闻、案例、团队 ...（略）
+        ============================== */
+
+        .case-list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .case-item {
+            display: grid;
+            grid-template-columns: 150px 1fr auto;
+            align-items: center;
+            gap: 30px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .case-tag {
+            color: var(--gray);
+            font-family: var(--font-mono);
+            letter-spacing: 0.08em;
+        }
+
+        .case-title {
+            margin-bottom: 7px;
+            color: var(--navy);
+            font-family:
+                Georgia,
+                "Songti SC",
+                "SimSun",
+                serif;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .case-description {
+            color: var(--gray);
+        }
+
+        .case-arrow {
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--navy);
+            border-radius: 50%;
+            color: var(--navy);
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .case-item:hover .case-arrow {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* mark 高亮样式 */
+        mark.search-highlight {
+            background: var(--yellow);
+            color: var(--navy-dark);
+            padding: 0.05em 0.18em;
+            border-radius: 2px;
+        }
+
+        /* 搜索消息内的导航按钮 */
+        .search-controls {
+            display: inline-flex;
+            gap: 8px;
+            margin-left: 8px;
+        }
+
+        .search-controls button {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .search-controls button:disabled {
+            opacity: 0.45;
+            cursor: default;
+        }
+
+        /* 优先把常用等宽文本元素设置为 IBM Plex Mono */
+        code, pre, .section-label, .brand-en, .stat-value, .case-tag, .hero-label, .team-circle strong, .mono {
+            font-family: var(--font-mono);
+        }
+
+        /* 手机适配（保持原有断点规则） */
+        @media (max-width: 1100px) {
+            .brand {
+                min-width: 270px;
+            }
+
+            .brand-cn {
+                font-size: 23px;
+            }
+
+            .brand-en {
+                display: none;
+            }
+
+            .primary-nav a {
+                min-width: 65px;
+                padding: 0 12px;
+                font-size: 15px;
+            }
+
+            .site-search {
+                min-width: 210px;
+            }
+        }
+
+        @media (max-width: 880px) {
+            .container {
+                width: min(100% - 32px, var(--max-width));
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .nav-wrapper {
+                min-height: 80px;
+                flex-wrap: wrap;
+                gap: 0;
+                padding: 12px 0;
+            }
+
+            .brand {
+                min-width: auto;
+            }
+
+            .brand-cn {
+                max-width: 245px;
+                font-size: 21px;
+            }
+
+            .menu-button {
+                display: inline-flex;
+            }
+
+            .primary-nav,
+            .site-search {
+                display: none;
+                width: 100%;
+            }
+
+            .site-header.menu-active .primary-nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 12px;
+            }
+
+            .site-header.menu-active .primary-nav a {
+                min-height: 52px;
+            }
+
+            .site-header.menu-active .site-search {
+                display: flex;
+                margin: 14px 0 5px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 75px 0;
+            }
+
+            .hero-description {
+                line-height: 1.8;
+            }
+
+            .statistics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px 0;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-item {
+                grid-template-columns: 1fr auto;
+                gap: 15px;
+            }
+
+            .case-tag {
+                grid-column: 1 / -1;
+            }
+
+            .news-grid,
+            .team-layout,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-layout {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-label {
+                font-size: 14px;
+            }
+
+            .hero-actions {
+                display: grid;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .statistics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                min-height: auto;
+            }
+
+            .featured-news {
+                min-height: 330px;
+                padding: 30px;
+            }
+
+            .team-visual {
+                min-height: 340px;
+            }
+
+            .team-circle {
+                width: 210px;
+                height: 210px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <!-- ======================= 导航 ======================= -->
-  <header class="site-header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__name">智能经济 · 数字经济研究</span>
-        <span class="brand__en">Digital Economy</span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-label="打开菜单">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">首页</a>
-        <a href="products.html">数字产品</a>
-        <a href="cases.html">数字化案例</a>
-        <a href="insights.html">AI生态资讯</a>
-        <a href="team.html">团队成果</a>
-      </nav>
-      <form class="header__search" data-search-form>
-        <input type="search" placeholder="检索指数、数据、论文…" aria-label="站内检索">
-        <span class="search__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
-          </svg>
-        </span>
-      </form>
-    </div>
-  </header>
+    <!-- 顶部导航 -->
+    <header class="site-header" id="siteHeader">
+        <div class="container nav-wrapper">
+            <a class="brand" href="#home" aria-label="返回首页">
+                <span class="brand-cn">
+                    智能经济・数字经济研究
+                </span>
 
-  <!-- ======================= Hero ======================= -->
-  <section class="hero">
-    <div class="container">
-      <span class="kicker">Intelligent Economy · Digital Economy Research</span>
-      <h1 class="animate-fade-up">智能经济 · 数字经济研究</h1>
-      <p class="lead animate-fade-up delay-1">
-        我们观察数字经济运行，构建可验证的指数与数据，把论文中的规律做成开放产品。
-        所有方法、数据与结论公开可查，欢迎复现与批评。
-      </p>
-      <div class="btn-group animate-fade-up delay-2">
-        <a class="btn btn-primary" href="products.html">查看数字产品</a>
-        <a class="btn btn-ghost" href="#products">浏览产品</a>
-      </div>
-    </div>
-  </section>
+                <span class="brand-en">
+                    DIGITAL<br>
+                    ECONOMY
+                </span>
+            </a>
 
-  <!-- ======================= 数据高亮 ======================= -->
-  <section class="dark panel">
-    <div class="container">
-      <span class="kicker">Open Data · 开放数据</span>
-      <div class="hero-stats">
-        <div class="stat-block reveal">
-          <div class="num"><span data-count="6" data-suffix="+">6+</span></div>
-          <div class="label">公开指数产品</div>
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="打开导航菜单"
+                aria-expanded="false"
+            >
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+
+            <nav class="primary-nav" id="primaryNav" aria-label="主要导航">
+                <!-- 初始 active: 同步 aria-current -->
+                <a class="active" href="#home" aria-current="page">首页</a>
+                <a href="#products">数字产品</a>
+                <a href="#cases">数字化案例</a>
+                <a href="#insights">AI生态资讯</a>
+                <a href="#team">团队成果</a>
+            </nav>
+
+            <form class="site-search" id="searchForm" role="search" aria-label="网站内容检索">
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="检索指数、数据、论文..."
+                    aria-label="检索网站内容"
+                    maxlength="80"
+                >
+
+                <button
+                    class="search-button"
+                    type="submit"
+                    aria-label="开始搜索"
+                >
+                    <svg
+                        class="search-icon"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <circle
+                            cx="10.8"
+                            cy="10.8"
+                            r="6.8"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                        ></circle>
+
+                        <path
+                            d="M16 16L21 21"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                        ></path>
+                    </svg>
+                </button>
+            </form>
         </div>
-        <div class="stat-block reveal">
-          <div class="num"><span data-count="40" data-suffix="+">40+</span></div>
-          <div class="label">产业数字化案例</div>
-        </div>
-        <div class="stat-block reveal">
-          <div class="num"><span data-count="120" data-suffix="+">120+</span></div>
-          <div class="label">开放数据文件</div>
-        </div>
-        <div class="stat-block reveal">
-          <div class="num"><span data-count="10" data-suffix="年">10年</span></div>
-          <div class="label">数字经济追踪周期</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======================= 数字产品入口 ======================= -->
-  <section class="panel" id="products">
-    <div class="container">
-      <span class="kicker">Digital Products · 数字产品</span>
-      <h2>把研究规律做成产品</h2>
-      <p class="lead measure">这些指数来自我们长期的研究积累。每一期发布都附完整方法论、原始数据与引用格式，供学界与业界免费使用。</p>
+        <div
+            class="search-message"
+            id="searchMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+    </header>
 
-      <div class="grid grid-3" style="margin-top:32px;">
-        <a class="card card--tile reveal" href="product-detail.html">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>
-          </svg>
-          <span class="card__title">数字经济景气指数</span>
-          <p class="body-14" style="color:#666;">月度跟踪数字经济整体运行，覆盖 12 个核心产业、31 个省级行政区，2016 年起连续发布。</p>
-          <span class="version" style="font-size:12px;color:#767676;margin-top:12px;display:block;">v3.2 · 2026-07</span>
-        </a>
-        <a class="card card--tile reveal" href="product-detail.html">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.5 4.5-3 6l-1 3h-6l-1-3c-1.5-1.5-3-3.5-3-6a7 7 0 0 1 7-7z"/><path d="M9.5 21h5"/>
-          </svg>
-          <span class="card__title">AI 生态活力指数</span>
-          <p class="body-14" style="color:#666;">监测大模型应用、算力投入与 AI 人才流动，刻画人工智能产业的真实热度与结构变化。</p>
-          <span class="version" style="font-size:12px;color:#767676;margin-top:12px;display:block;">v2.0 · 2026-08</span>
-        </a>
-        <a class="card card--tile reveal" href="product-detail.html">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E3851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
-          </svg>
-          <span class="card__title">产业数字化水平指数</span>
-          <p class="body-14" style="color:#666;">分行业评估数字化转型深度，覆盖制造、零售、金融、医疗等 16 个行业，季度更新。</p>
-          <span class="version" style="font-size:12px;color:#767676;margin-top:12px;display:block;">v1.8 · 2026-06</span>
-        </a>
-      </div>
-      <div class="btn-group">
-        <a class="btn btn-primary" href="products.html">查看全部产品</a>
-        <a class="btn btn-ghost" href="product-detail.html">查看指数方法论</a>
-      </div>
-    </div>
-  </section>
+    <main id="main">
+        <!-- 首页主视觉 -->
 
-  <!-- ======================= 最近简讯 ======================= -->
-  <section class="panel" style="background:var(--gray-bg);">
-    <div class="container">
-      <span class="kicker">Daily Brief · 每日简讯</span>
-      <h2>今日 AI 生态速览</h2>
-      <div class="block">
-        <div class="brief-item reveal">
-          <div class="brief-item__date">2026-08-19</div>
-          <div class="brief-item__body">
-            <h4>国产大模型企业级部署需求环比上升 23%</h4>
-            <p>基于我们跟踪的 300 家 SaaS 服务商接口调用数据，企业级大模型私有化部署需求连续三个季度上升，金融与政务行业占比最高。</p>
-            <div class="brief-item__tags">
-              <a class="tag" href="insights.html">大模型</a><a class="tag" href="insights.html">企业部署</a>
+        <section class="hero searchable" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-label">
+                        INTELLIGENT ECONOMY · DIGITAL ECONOMY RESEARCH
+                    </p>
+
+                    <h1 class="hero-title">
+                        智能经济・数字经济研究
+                    </h1>
+
+                    <p class="hero-description">
+                        我们观察数字经济运行，构建可验证的指数与数据，
+                        把论文中的规律做成开放产品。
+                        所有方法、数据与结论公开可查，欢迎复现与批评。
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#products">
+                            查看数字产品
+                        </a>
+
+                        <a class="button button-secondary" href="#products">
+                            浏览产品
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="brief-item reveal">
-          <div class="brief-item__date">2026-08-18</div>
-          <div class="brief-item__body">
-            <h4>数据要素市场单周成交额创年内新高</h4>
-            <p>本周全国主要数据交易所成交额合计 42.6 亿元，其中公共数据授权运营类交易占比首次超过三成。</p>
-            <div class="brief-item__tags">
-              <a class="tag" href="insights.html">数据要素</a><a class="tag" href="insights.html">交易市场</a>
+        </section>
+
+        <!-- 数据统计 -->
+
+        <section class="statistics searchable" aria-label="开放数据统计">
+            <div class="container">
+                <p class="statistics-label">
+                    OPEN DATA · 开放数据
+                </p>
+
+                <div class="statistics-grid">
+                    <article class="stat-item">
+                        <p class="stat-value">6+</p>
+                        <p class="stat-name">公开指数产品</p>
+                    </article>
+
+                    <article class="stat-item">
+                        <p class="stat-value">40+</p>
+                        <p class="stat-name">产业数字化案例</p>
+                    </article>
+
+                    <article class="stat-item">
+                        <p class="stat-value">120+</p>
+                        <p class="stat-name">开放数据文件</p>
+                    </article>
+
+                    <article class="stat-item">
+                        <p class="stat-value">10年</p>
+                        <p class="stat-name">数字经济追踪周期</p>
+                    </article>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="brief-item reveal">
-          <div class="brief-item__date">2026-08-17</div>
-          <div class="brief-item__body">
-            <h4>AI 岗位薪酬增速放缓，结构分化明显</h4>
-            <p>我们对 8 个招聘平台的职位数据进行测算：算法岗薪酬中位数环比持平，数据工程与 AI 应用岗仍保持 8% 左右的季度增长。</p>
-            <div class="brief-item__tags">
-              <a class="tag" href="insights.html">AI 就业</a><a class="tag" href="insights.html">薪酬</a>
+        </section>
+
+        <!-- 数字产品 -->
+
+        <section class="section section-white searchable" id="products">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">
+                        DIGITAL PRODUCTS · 数字产品
+                    </p>
+
+                    <h2 class="section-title">
+                        将研究成果转化为可使用的数据产品
+                    </h2>
+
+                    <p class="section-description">
+                        围绕数字经济景气度、产业数字化和人工智能发展，
+                        提供公开指数、数据文件、方法说明与研究成果。
+                    </p>
+                </div>
+
+                <div class="card-grid">
+                    <article class="content-card searchable">
+                        <p class="card-number">01</p>
+
+                        <h3 class="card-title">
+                            数字经济景气指数
+                        </h3>
+
+                        <p class="card-description">
+                            跟踪数字经济运行状态，从产业、创新、
+                            投资和市场等维度观察景气变化。
+                        </p>
+
+                        <a class="card-link" href="#insights">
+                            查看指数说明
+                        </a>
+                    </article>
+
+                    <article class="content-card searchable">
+                        <p class="card-number">02</p>
+
+                        <h3 class="card-title">
+                            产业数字化数据库
+                        </h3>
+
+                        <p class="card-description">
+                            收集和整理制造业、服务业及公共服务领域的
+                            数字化转型案例和关键指标。
+                        </p>
+
+                        <a class="card-link" href="#cases">
+                            浏览案例数据
+                        </a>
+                    </article>
+
+                    <article class="content-card searchable">
+                        <p class="card-number">03</p>
+
+                        <h3 class="card-title">
+                            AI生态观察
+                        </h3>
+
+                        <p class="card-description">
+                            追踪人工智能技术、企业、人才、
+                            投融资和产业应用的最新变化。
+                        </p>
+
+                        <a class="card-link" href="#insights">
+                            查看研究资讯
+                        </a>
+                    </article>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <a class="btn btn-text" href="insights.html">浏览全部资讯 →</a>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- ======================= 数字化案例 ======================= -->
-  <section class="panel">
-    <div class="container">
-      <span class="kicker">Case Studies · 数字化案例</span>
-      <h2>来自一线的可验证案例</h2>
-      <p class="lead measure">案例基于实地调研与企业授权数据整理，方法、指标与结果均公开，供同行比对与复核。</p>
+        <!-- 数字化案例 -->
 
-      <div class="grid grid-2" style="margin-top:32px;">
-        <div class="card reveal">
-          <span class="version" style="font-size:12px;color:#767676;">CASE-014 · 制造业</span>
-          <span class="card__title" style="display:block;">某大型装备制造企业的数字化供应链改造</span>
-          <p class="body-14" style="color:#666;margin-top:8px;">以数据中台统一 37 套业务系统，供应链响应周期从 21 天缩短至 9 天。</p>
-          <div class="metric" style="margin-top:16px;">
-            <div class="num" style="font-family:var(--font-mono);color:#1E3851;">57%</div>
-            <div class="label" style="font-size:13px;color:#767676;">库存周转效率提升</div>
-          </div>
-        </div>
-        <div class="card reveal">
-          <span class="version" style="font-size:12px;color:#767676;">CASE-021 · 零售</span>
-          <span class="card__title" style="display:block;">区域连锁零售企业的智能补货系统</span>
-          <p class="body-14" style="color:#666;margin-top:8px;">基于销售预测模型重构补货决策，缺货率下降至 2.1%，生鲜损耗减少 18%。</p>
-          <div class="metric" style="margin-top:16px;">
-            <div class="num" style="font-family:var(--font-mono);color:#1E3851;">18%</div>
-            <div class="label" style="font-size:13px;color:#767676;">生鲜损耗下降</div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <a class="btn btn-ghost" href="cases.html">查看全部案例</a>
-      </div>
-    </div>
-  </section>
+        <section class="section searchable" id="cases">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">
+                        DIGITAL CASES · 数字化案例
+                    </p>
 
-  <!-- ======================= 深度长文 ======================= -->
-  <section class="panel" style="background:var(--gray-bg);">
-    <div class="container">
-      <span class="kicker">Long Reads · 深度长文</span>
-      <h2>值得细读的研究笔记</h2>
-      <div class="block">
-        <div class="article-card reveal">
-          <div class="article-card__thumb">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#767676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="article-card__meta">2026-08-12 · 方法论 · 约 12 分钟</div>
-            <a class="article-card__title" href="insights.html">我们如何测量"人工智能渗透率"：一份方法论说明</a>
-            <p class="article-card__excerpt">指数不是拍出来的。这篇长文完整交代了指标选取、数据来源、权重设定与稳健性检验的过程，也坦承了其中的取舍与局限。</p>
-          </div>
-        </div>
-        <div class="article-card reveal">
-          <div class="article-card__thumb">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#767676" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
-            </svg>
-          </div>
-          <div>
-            <div class="article-card__meta">2026-08-05 · 观察 · 约 8 分钟</div>
-            <a class="article-card__title" href="insights.html">大模型招聘的 12 个月：从"会提示词"到"会验收"</a>
-            <p class="article-card__excerpt">追踪了 12 个月的企业 AI 岗位描述变化，岗位要求正在从工具使用转向交付验收与质量判断，这也许说明了行业在成熟。</p>
-          </div>
-        </div>
-      </div>
-      <div class="btn-group">
-        <a class="btn btn-text" href="insights.html">全部长文 →</a>
-      </div>
-    </div>
-  </section>
+                    <h2 class="section-title">
+                        产业数字化实践案例
+                    </h2>
 
-  <!-- ======================= 开放声明 ======================= -->
-  <section class="dark panel">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;">
-      <div>
-        <span class="kicker">Open Science · 开放共享</span>
-        <h2 style="margin-top:8px;">数据与知识，应当共享</h2>
-        <p class="lead measure" style="margin-top:12px;">
-          我们相信可复现是研究的基本底线。所有指数、数据集与代码均以开放许可发布，
-          支持下载、复现与再检验。你不需要联系我们索要数据，数据就在那里。
-        </p>
-      </div>
-      <div class="btn-group" style="margin-top:0;">
-        <a class="btn btn-primary" href="products.html">下载开放数据</a>
-        <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff;" href="team.html#papers">阅读论文</a>
-      </div>
-    </div>
-  </section>
+                    <p class="section-description">
+                        通过真实应用场景观察数字技术如何改变生产、
+                        管理、服务和商业模式。
+                    </p>
+                </div>
 
-  <!-- ======================= 页脚 ======================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand">智能经济 · 数字经济研究</div>
-          <p class="footer__desc">Intelligent Economy · Digital Economy Research。一个开放的数字经济研究平台：指数、数据、案例与论文，全部可验证、可复现。</p>
-        </div>
-        <div class="footer__col">
-          <h4>产品</h4>
-          <a href="products.html">数字产品总览</a>
-          <a href="product-detail.html">指数方法论</a>
-          <a href="products.html">数据下载</a>
-          <a href="products.html">版本记录</a>
-        </div>
-        <div class="footer__col">
-          <h4>研究</h4>
-          <a href="team.html#papers">代表性论文</a>
-          <a href="cases.html">数字化案例</a>
-          <a href="insights.html">AI 生态资讯</a>
-          <a href="insights.html">每日简讯</a>
-        </div>
-        <div class="footer__col">
-          <h4>关于</h4>
-          <a href="team.html#people">团队介绍</a>
-          <a href="team.html">加入我们</a>
-          <a href="index.html">开放声明</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© 2026 智能经济 · 数字经济研究团队</span>
-        <span class="mono">CC BY-NC 4.0 · ISSN 2996-2042</span>
-      </div>
-    </div>
-  </footer>
+                <div class="case-list">
+                    <article class="case-item searchable">
+                        <p class="case-tag">制造业 / 01</p>
 
-  <script src="assets/js/main.js"></script>
+                        <div>
+                            <h3 class="case-title">
+                                智能制造与生产流程优化
+                            </h3>
+
+                            <p class="case-description">
+                                使用工业互联网、人工智能和数据分析，
+                                提升生产效率与质量控制能力。
+                            </p>
+                        </div>
+
+                        <a
+                            class="case-arrow"
+                            href="#products"
+                            aria-label="查看智能制造案例"
+                        >
+                            →
+                        </a>
+                    </article>
+
+                    <article class="case-item searchable">
+                        <p class="case-tag">服务业 / 02</p>
+
+                        <div>
+                            <h3 class="case-title">
+                                数字平台与服务模式创新
+                            </h3>
+
+                            <p class="case-description">
+                                分析平台经济、数字营销和智能服务带来的
+                                组织与商业模式变化。
+                            </p>
+                        </div>
+
+                        <a
+                            class="case-arrow"
+                            href="#products"
+                            aria-label="查看数字平台案例"
+                        >
+                            →
+                        </a>
+                    </article>
+
+                    <article class="case-item searchable">
+                        <p class="case-tag">公共服务 / 03</p>
+
+                        <div>
+                            <h3 class="case-title">
+                                城市治理与公共数据应用
+                            </h3>
+
+                            <p class="case-description">
+                                研究公共数据开放、城市治理平台和
+                                数字公共服务的实际应用。
+                            </p>
+                        </div>
+
+                        <a
+                            class="case-arrow"
+                            href="#products"
+                            aria-label="查看公共服务案例"
+                        >
+                            →
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI资讯 -->
+
+        <section class="section section-white searchable" id="insights">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">
+                        AI INSIGHTS · AI生态资讯
+                    </p>
+
+                    <h2 class="section-title">
+                        追踪人工智能与数字经济的新变化
+                    </h2>
+                </div>
+
+                <div class="news-grid">
+                    <article class="featured-news searchable">
+                        <p class="news-date">RESEARCH FOCUS</p>
+
+                        <h3>
+                            人工智能如何影响产业效率与经济增长
+                        </h3>
+
+                        <p>
+                            从技术扩散、企业应用和产业结构三个层面，
+                            观察人工智能产生经济价值的路径。
+                        </p>
+                    </article>
+
+                    <div class="news-list">
+                        <article class="news-item searchable">
+                            <p class="news-date">数据观察</p>
+
+                            <h3>
+                                数字经济景气指数方法说明
+                            </h3>
+                        </article>
+
+                        <article class="news-item searchable">
+                            <p class="news-date">产业研究</p>
+
+                            <h3>
+                                企业数字化转型的关键条件
+                            </h3>
+                        </article>
+
+                        <article class="news-item searchable">
+                            <p class="news-date">AI观察</p>
+
+                            <h3>
+                                生成式人工智能的产业应用趋势
+                            </h3>
+                        </article>
+
+                        <article class="news-item searchable">
+                            <p class="news-date">开放研究</p>
+
+                            <h3>
+                                数据、代码与研究方法公开说明
+                            </h3>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队成果 -->
+
+        <section class="section searchable" id="team">
+            <div class="container">
+                <div class="team-layout">
+                    <div class="team-visual" aria-label="团队研究成果">
+                        <div class="team-circle">
+                            <div>
+                                <strong>40+</strong>
+                                <span>研究与应用成果</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-content">
+                        <p class="section-label">
+                            TEAM RESULTS · 团队成果
+                        </p>
+
+                        <h2>
+                            用开放研究连接数据与实践
+                        </h2>
+
+                        <p>
+                            团队围绕数字经济、产业数字化和人工智能开展研究，
+                            推动研究成果转化为可验证、可复现、可使用的开放产品。
+                        </p>
+
+                        <ul class="team-points">
+                            <li>公开研究方法与指标构建过程</li>
+                            <li>提供可下载的数据和说明文档</li>
+                            <li>持续更新数字化案例与产业观察</li>
+                        </ul>
+
+                        <a class="button button-primary" href="#home">
+                            返回首页
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2 class="footer-title">
+                        智能经济・数字经济研究
+                    </h2>
+
+                    <p class="footer-description">
+                        观察数字经济运行，构建开放数据产品，
+                        推动研究成果公开、复现与应用。
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="footer-title">网站导航</h2>
+
+                    <nav class="footer-links" aria-label="页脚导航">
+                        <a href="#home">首页</a>
+                        <a href="#products">数字产品</a>
+                        <a href="#cases">数字化案例</a>
+                        <a href="#insights">AI生态资讯</a>
+                        <a href="#team">团队成果</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h2 class="footer-title">研究原则</h2>
+
+                    <div class="footer-links">
+                        <a href="#products">数据公开</a>
+                        <a href="#products">方法透明</a>
+                        <a href="#cases">结果可验证</a>
+                        <a href="#team">研究可复现</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="copyright">
+                © 2026 智能经济・数字经济研究
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /* ==============================
+           防御性 DOM 选择与实用函数
+        ============================== */
+
+        function $(selector, root = document) {
+            return root.querySelector(selector);
+        }
+
+        function $all(selector, root = document) {
+            return Array.from(root.querySelectorAll(selector));
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }
+
+        /* ==============================
+           1. 手机导航菜单（带键盘支持与防御）
+        ============================== */
+
+        (function () {
+            const siteHeader = $('#siteHeader');
+            const menuButton = $('#menuButton');
+            const navigationLinks = $all('.primary-nav a, .footer-links a');
+
+            if (!siteHeader || !menuButton) {
+                // 防御：若页面被组件化或缺失元素，优雅降级
+                return;
+            }
+
+            menuButton.addEventListener('click', function () {
+                const isOpen = siteHeader.classList.toggle('menu-active');
+                menuButton.setAttribute('aria-expanded', String(isOpen));
+                document.body.classList.toggle('menu-open', isOpen);
+                if (!isOpen) {
+                    // 将焦点返回按钮，改善无障碍体验
+                    menuButton.focus();
+                }
+            });
+
+            // 支持使用 Esc 关闭菜单
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    if (siteHeader.classList.contains('menu-active')) {
+                        siteHeader.classList.remove('menu-active');
+                        document.body.classList.remove('menu-open');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                        menuButton.focus();
+                    }
+                }
+            });
+
+            navigationLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    siteHeader.classList.remove('menu-active');
+                    document.body.classList.remove('menu-open');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+
+        /* ==============================
+           2. 导航栏选中状态（同步 aria-current）
+        ============================== */
+
+        (function () {
+            const mainNavigationLinks = $all('.primary-nav a');
+
+            if (mainNavigationLinks.length === 0) return;
+
+            mainNavigationLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    mainNavigationLinks.forEach(function (item) {
+                        item.classList.remove('active');
+                        item.removeAttribute('aria-current');
+                    });
+
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                });
+            });
+        })();
+
+        /* ==============================
+           3. 改进的网站搜索：高亮匹配、计数与导航
+        ============================== */
+
+        (function () {
+            const searchForm = $('#searchForm');
+            const searchInput = $('#searchInput');
+            const searchMessage = $('#searchMessage');
+            const searchableElements = $all('.searchable');
+
+            if (!searchForm || !searchInput || !searchMessage) return;
+
+            // 状态
+            let markList = [];
+            let currentIndex = -1;
+
+            function clearAllMarks() {
+                // 将所有 mark.search-highlight 替换回纯文本
+                $all('mark.search-highlight').forEach((mark) => {
+                    const text = document.createTextNode(mark.textContent);
+                    mark.parentNode.replaceChild(text, mark);
+                });
+                markList = [];
+                currentIndex = -1;
+            }
+
+            function highlightMatches(keyword) {
+                clearAllMarks();
+                if (!keyword) return 0;
+
+                const re = new RegExp('(' + escapeRegExp(keyword) + ')', 'gi');
+                let total = 0;
+
+                searchableElements.forEach((el) => {
+                    // 操作 innerHTML：保持简单，适用于静态内容。
+                    // 若页面中含复杂动态交互或脚本绑定，建议改用更安全的文本节点遍历实现。
+                    const original = el.innerHTML;
+                    const newHTML = original.replace(re, '<mark class="search-highlight">$1</mark>');
+                    if (newHTML !== original) {
+                        el.innerHTML = newHTML;
+                        // 统计该元素中 mark 数量
+                        const marks = el.querySelectorAll('mark.search-highlight');
+                        total += marks.length;
+                    }
+                });
+
+                // 更新全局 mark 列表
+                markList = $all('mark.search-highlight');
+                return total;
+            }
+
+            function scrollToMark(index) {
+                if (markList.length === 0) return;
+                index = ((index % markList.length) + markList.length) % markList.length;
+                currentIndex = index;
+                const target = markList[currentIndex];
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // 给当前 mark 添加临时焦点态（可被 CSS 进一步优化）
+                markList.forEach(m => m.classList.remove('current-mark'));
+                target.classList.add('current-mark');
+            }
+
+            function updateMessage(total, keyword) {
+                if (!total) {
+                    showSearchMessage('没有找到“' + keyword + '”相关内容。', null);
+                    return;
+                }
+
+                const controls = createControls(total);
+                const html = '已找到 ' + total + ' 处匹配："'
+                    + keyword + '"。';
+                showSearchMessage(html, controls);
+            }
+
+            function createControls(total) {
+                // 返回容器元素，包含 Prev/Next 按钮和位置信息
+                const container = document.createElement('span');
+                container.className = 'search-controls';
+
+                const prev = document.createElement('button');
+                prev.type = 'button';
+                prev.textContent = '上一个';
+                prev.disabled = (total <= 1);
+                prev.addEventListener('click', function () {
+                    if (markList.length === 0) return;
+                    currentIndex = (currentIndex <= 0) ? markList.length - 1 : currentIndex - 1;
+                    scrollToMark(currentIndex);
+                });
+
+                const next = document.createElement('button');
+                next.type = 'button';
+                next.textContent = '下一个';
+                next.disabled = (total <= 1);
+                next.addEventListener('click', function () {
+                    if (markList.length === 0) return;
+                    currentIndex = (currentIndex + 1) % markList.length;
+                    scrollToMark(currentIndex);
+                });
+
+                const info = document.createElement('span');
+                info.setAttribute('aria-hidden', 'true');
+                info.textContent = '（按 Esc 退出；使用页面导航键继续）';
+
+                container.appendChild(prev);
+                container.appendChild(next);
+                container.appendChild(info);
+
+                return container;
+            }
+
+            function showSearchMessage(text, controlsNode) {
+                // 支持 html/text + optional control node
+                // 清空先前内容
+                searchMessage.innerHTML = '';
+                const textNode = document.createElement('span');
+                textNode.textContent = text;
+                searchMessage.appendChild(textNode);
+
+                if (controlsNode) {
+                    searchMessage.appendChild(controlsNode);
+                }
+
+                searchMessage.classList.add('show');
+
+                window.clearTimeout(showSearchMessage.timer);
+                showSearchMessage.timer = window.setTimeout(function () {
+                    searchMessage.classList.remove('show');
+                }, 7000);
+            }
+
+            searchForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const raw = searchInput.value.trim();
+                const keyword = raw.toLowerCase();
+
+                // 清除上一次的高亮
+                clearAllMarks();
+
+                if (!keyword) {
+                    showSearchMessage('请输入要检索的关键词。');
+                    searchInput.focus();
+                    return;
+                }
+
+                // 限制长度以避免正则/性能问题
+                if (keyword.length > 80) {
+                    showSearchMessage('关键词过长，请缩短后重试。');
+                    return;
+                }
+
+                const total = highlightMatches(keyword);
+
+                updateMessage(total, raw);
+
+                if (total > 0) {
+                    // 默认滚动到第一个匹配
+                    scrollToMark(0);
+                }
+            });
+
+            // 退出搜索高亮时还原
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    clearAllMarks();
+                }
+            });
+
+            // 防止 mark 数量太大造成意外（保守策略）
+            // 若需要更复杂的行为（例如分页高亮），可以进一步扩展。
+        })();
+    </script>
+
+    <!-- 如果你还想使用第二份代码里的外部 JS（assets/js/main.js），
+         可以把下面这行取消注释并提供该文件。可能会与上面的内联脚本有重复行为。 -->
+    <!-- <script src="assets/js/main.js"></script> -->
 </body>
 </html>
